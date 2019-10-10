@@ -1,7 +1,7 @@
 
 var gameStatus;
 var gameSpeed=100;	
-var scvalue;
+
 
 function reset(){
 	
@@ -335,7 +335,7 @@ if(exist==1 && drugfirst==1){
 		if(gameStatus==true){
 			
 			getData(score);
-			document.getElementById("wyniki").innerHTML+=" <br> Your last score was: " + score + "<br>";
+			document.getElementById("wyniki").innerHTML=" <br> Your last score was: " + score + "<br>";
 			gameSpeed=100;
 		}
 		clearInterval(game);
