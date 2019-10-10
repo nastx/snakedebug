@@ -182,6 +182,13 @@ if(exist==1 && drugfirst==1){
 	x:Math.floor(Math.random()*17+1)*box,
 	y:Math.floor(Math.random()*15+3)*box
 		}
+		
+		if(drug.x==food.x && drug.y == food.y){
+			drug={
+				x:Math.floor(Math.random()*17+1)*box,
+				y:Math.floor(Math.random()*15+3)*box
+				}
+	}
 		drugfirst++;
 	
 }
@@ -287,21 +294,16 @@ if(exist==1 && drugfirst==1){
 				x:Math.floor(Math.random()*17+1)*box,
 				y:Math.floor(Math.random()*15+3)*box
 				}
-			
-		
-		
-		
-		
-
 	}
 	
 	 clearInterval(game);
 	 gameSpeed=gameSpeed-10;
 	 game=setInterval(draw,gameSpeed);
-	 setTimeout(xdp,3000);
 	 setTimeout(function(){
 		 if(gameStatus==false){
-		 game=setInterval(draw,gameSpeed)
+			 clearInterval(game);
+			 gameSpeed=100;
+			game=setInterval(draw,gameSpeed)
 		 }
 		 console.log("new");
 	 },3000);
@@ -355,13 +357,8 @@ if(exist==1 && drugfirst==1){
 let game=setInterval(draw,gameSpeed);
 
 
-function xdp (){
-	if(gameStatus==false){
-	clearInterval(game);
-	gameSpeed=100;
-	console.log("xdp");
-	}
-}
+
+
 
 
 }
